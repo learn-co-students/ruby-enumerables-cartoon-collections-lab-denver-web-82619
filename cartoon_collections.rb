@@ -11,9 +11,6 @@ def summon_captain_planet(planeteer_calls)
   planeteer_calls.map { |calls| calls.capitalize + '!'}
 end
 
-summon_captain_planet(planeteer_calls)
-
-
 short_words = ["puff", "go", "two"]
 assorted_words = ["two", "go", "industrious", "bop"]
 
@@ -21,9 +18,14 @@ def long_planeteer_calls(array)
   array.reduce { |n| n.length > 4 }
 end
 
-long_planeteer_calls(short_words)
-
-def find_the_cheese# code an argument here
-  # the array below is here to help
-  cheese_types = ["cheddar", "gouda", "camembert"]
+def find_the_cheese(array)
+  array.any? { |n| n.length > 4 }
 end
+
+
+
+def find_the_cheese(array)
+  cheese_types = ["cheddar", "gouda", "camembert"]
+  array.detect do |n| cheese_types.include?(n)
+   end
+end   
